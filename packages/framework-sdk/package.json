@@ -1,0 +1,29 @@
+{
+  "name": "@llqm/framework-sdk",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "lvliqi <lvliqi_d@163.com>",
+  "homepage": "https://github.com/dreamllq/qi-micro#readme",
+  "license": "ISC",
+  "main": "lib/framework-sdk.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dreamllq/qi-micro.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/framework-sdk.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/dreamllq/qi-micro/issues"
+  }
+}
