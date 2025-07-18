@@ -9,8 +9,8 @@ const pkg = JSON.parse(fs.readFileSync(path.join(__dirname,'..', 'package.json')
 const program = new Command();
 
 program
-  .name('alsi')
-  .description('alsi微应用ts类型生成')
+  .name('qm')
+  .description('qi micro微应用ts类型生成')
   .version(pkg.version)
   .option('-n, --npmGroupName <string>', '包组名称')
   .action((options)=>{

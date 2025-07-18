@@ -26,8 +26,6 @@
     "noImplicitAny": false,
     "typeRoots": [
       "./node_modules/@types",
-      "./node_modules/@alsi-microapp-types",
-      "./node_modules/@alsi-alps-microapp-types"
     ],
     "outDir": "ts-dist"
   },

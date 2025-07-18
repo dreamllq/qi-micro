@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-module.exports = ({name, version, groupName='@alsi-microapp-types', exposes}, { outDir })=>{
+module.exports = ({name, version, groupName='@llqm-microapp-types', exposes}, { outDir })=>{
   const packageJson = {
     "name": `${groupName}/${name}`,
     "version": `${version}`,
@@ -10,13 +10,6 @@ module.exports = ({name, version, groupName='@alsi-microapp-types', exposes}, { 
     "types": "index.d.ts",
     "dependencies":{}
   };
-
-  // const pkg = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'package.json'), 'utf8'));
-
-  // if(pkg.dependencies['@alsi/aps-api']){
-  //   packageJson.dependencies['@alsi/aps-api'] = pkg.dependencies['@alsi/aps-api'];
-  // }
-
 
   fs.writeFileSync(path.join(outDir, 'package.json'), JSON.stringify(packageJson, null,2), 'utf8')
 }
