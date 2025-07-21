@@ -36,12 +36,12 @@ module.exports = ({ projectEnv = {} }) => ({
     rules: [
       {
         test: /\.vue$/,
-        use: 'vue-loader'
+        use: require.resolve('vue-loader')
       },
       {
         test: /.ts$/, 
         use: {
-          loader: 'babel-loader',
+          loader: require.resolve('babel-loader'),
           options: { presets: [['@babel/preset-typescript', { allExtensions: true }]] }
         }
       },

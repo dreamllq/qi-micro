@@ -28,7 +28,7 @@ module.exports = (env = {}) => {
           test: /\.m?js$/,
           exclude: /node_modules/,
           use: {
-            loader: 'babel-loader',
+            loader: require.resolve('babel-loader'),
             options: { presets: ['@babel/preset-env'] } 
           },
           resolve: { fullySpecified: false }
@@ -40,9 +40,9 @@ module.exports = (env = {}) => {
               loader: MiniCssExtractPlugin.loader,
               options: {}
             },
-            'css-loader',
-            'postcss-loader',
-            'sass-loader'
+            require.resolve('css-loader'),
+            require.resolve('postcss-loader'),
+            require.resolve('sass-loader')
           ]
         }
       ]

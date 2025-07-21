@@ -31,9 +31,9 @@ module.exports = (env = { port: 8080 }) => {
         {
           test: /\.(css|scss)$/,
           use: [
-            'style-loader',
-            'css-loader',
-            'sass-loader'
+            require.resolve('style-loader'),
+            require.resolve('css-loader'),
+            require.resolve('sass-loader')
           ]
         }
       ]

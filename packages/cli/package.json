@@ -53,13 +53,6 @@
     "mime": "3.0.0",
     "minimist": "^1.2.8",
     "portfinder": "^1.0.32",
-    "webpack": "^5.88.2",
-    "webpack-bundle-analyzer": "^4.9.0",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.15.1",
-    "ts-jest": "^29.1.1",
-    "url-loader": "^4.1.1",
-    "vue-auto-routing": "^1.0.1",
-    "vue-loader": "^17.2.2"
+    "ts-jest": "^29.1.1"
   }
 }

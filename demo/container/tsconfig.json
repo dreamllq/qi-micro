@@ -31,7 +31,7 @@
     "noImplicitAny": false,
     "typeRoots": [
       "./node_modules/@types",
-      "./node_modules/@alsi-microapp-types"
+      "./node_modules/@llqm-types"
     ],
     "outDir": "ts-dist"
   },

@@ -1,34 +1,8 @@
 import start from 'foundation/start';
-import hpProjectConfig from 'hp-config/project-config';
-import mdfProjectConfig from 'mdf-config/project-config';
-import wmsProjectConfig from 'wms-config/project-config';
-import { PLATFORM } from '@/constants/platform';
-import { env } from '@alsi/micro-framework-sdk';
-const { WEB_BIZ } = env;
-const configs = {
-  [PLATFORM.COMPLETE_EDITION]: hpProjectConfig,
-  [PLATFORM.SHORT_EDITION]: mdfProjectConfig
-};
+import { env } from '@llqm/framework-sdk';
 
-start({
-  loadConfig(userInfo:{ tenant: { platform: PLATFORM; platformList?: PLATFORM[] } }) {
-    let config; 
-    if (WEB_BIZ === 'wms') {
-      config = wmsProjectConfig;
-    } else {
-      if (Array.isArray(userInfo.tenant.platformList)) {
-        const platform = Object.keys(configs).find((item) => userInfo.tenant.platformList!.includes(item as PLATFORM));
-        config = platform ? configs[platform as PLATFORM] : configs[PLATFORM.COMPLETE_EDITION];
-      } else {
-        config = configs[userInfo.tenant.platform as PLATFORM];
-      }
-    }
 
-    document.title = config.title;
-    replaceFavicon(config.logo.favicon);
-    return config;
-  }
-});
+start();
 
 const replaceFavicon = (src) => {
   const link = document.createElement('link');

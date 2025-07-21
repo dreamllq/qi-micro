@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-module.exports = ({name, version, groupName='@llqm-microapp-types', exposes}, { outDir })=>{
+module.exports = ({name, version, groupName='@llqm-types', exposes}, { outDir })=>{
   const packageJson = {
     "name": `${groupName}/${name}`,
     "version": `${version}`,

@@ -3,15 +3,15 @@
   "version": "1.0.0-0",
   "private": true,
   "scripts": {
-    "dev": "alsi serve",
-    "build": "alsi build",
-    "preview": "alsi preview",
-    "trans": "alsi trans",
-    "publish-expose-types": "alsi types-gen -ap",
+    "dev": "qm serve",
+    "build": "qm build",
+    "preview": "qm preview",
+    "trans": "qm trans",
+    "publish-expose-types": "qm types-gen -ap",
     "type-check": "vue-tsc --noEmit -p tsconfig.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "test": "alsi test",
-    "preversion": "alsi-npm-preversion && npm run test",
+    "test": "qm test",
+    "preversion": "qm-npm-preversion && npm run test",
     "postversion": "git push && git push --tags"
   },
   "dependencies": {
@@ -56,13 +56,7 @@
     "stylelint-config-recommended-vue": "^1.6.1",
     "stylelint-config-standard": "^38.0.0",
     "typescript": "^4.9.3",
-    "url-loader": "^4.1.1",
-    "vue-auto-routing": "^1.0.1",
-    "vue-loader": "^17.2.2",
     "vue-tsc": "^1.0.24",
-    "webpack": "^5.88.2",
-    "webpack-bundle-analyzer": "^4.9.0",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.15.1"
+    "webpack-cli": "^5.1.4"
   }
 }
