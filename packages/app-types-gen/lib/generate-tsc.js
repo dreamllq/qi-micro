@@ -26,7 +26,7 @@ const genCode = (files, outDir)=>{
 
   spawnSync(path.join(process.cwd(), 'node_modules', '.bin', 'resolve-tspaths'), ['-p', path.join(__dirname, 'tsconfig.json'), '--verbose'], {
     cwd: process.cwd(),
-    // stdio: [process.stdin, process.stdout, process.stderr],
+    stdio: [process.stdin, process.stdout, process.stderr],
     shell: process.platform === 'win32'
   });
 }
