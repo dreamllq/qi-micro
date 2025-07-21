@@ -7,7 +7,7 @@ import ElementPlus from 'element-plus';
 import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 import createRouter from './router';
 import createPermission from './permission';
-import { init as sdkInit } from '@llqm/framework-sdk';
+import { init as sdkInit } from 'llqm-framework-sdk';
 import { isBoolean } from 'lodash';
 
 export const start: StartFunction = async ({ base, defaultPage, layout, fullView, i18n, routes = [], permissionOptions, beforeMount, getLoginUser, beforeLayoutMount, performance, keepAlive }) => {

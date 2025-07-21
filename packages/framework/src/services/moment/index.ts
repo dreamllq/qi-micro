@@ -1,5 +1,5 @@
 
-import { getLanguage } from '@llqm/framework-sdk';
+import { getLanguage } from 'llqm-framework-sdk';
 
 export const init = async () => {
   const language = getLanguage();

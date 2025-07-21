@@ -1,4 +1,4 @@
-import { getLanguage } from '@llqm/framework-sdk';
+import { getLanguage } from 'llqm-framework-sdk';
 
 export const loadLocal = async () => {
   const language = getLanguage();

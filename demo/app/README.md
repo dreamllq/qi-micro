@@ -20,7 +20,7 @@
 
 ### main.ts
 
-- 应用的配置信息，最后在项目入口中进行整合，代码中通过 `import { appsData } from '@llqm/framework-sdk';` 进行使用；
+- 应用的配置信息，最后在项目入口中进行整合，代码中通过 `import { appsData } from 'llqm-framework-sdk';` 进行使用；
 - export保留字段
     - routes：微应用路由配置
     - menu：微应用提供的菜单集合
@@ -29,7 +29,7 @@
 
 ### locales/index.ts
 
-- 国际化配置，最后在项目入口中进行整合，代码中通过 `import { i18n } from '@llqm/framework-sdk';` 进行使用
+- 国际化配置，最后在项目入口中进行整合，代码中通过 `import { i18n } from 'llqm-framework-sdk';` 进行使用
 - 目前支持：zhCn、en、ja
 
 ### manifest.json

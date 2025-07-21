@@ -15,8 +15,8 @@
     "postversion": "git push && git push --tags"
   },
   "dependencies": {
-    "@llqm/webpack-config": "workspace:*",
-    "@llqm/framework-sdk": "workspace:*",
+    "llqm-webpack-config": "workspace:*",
+    "llqm-framework-sdk": "workspace:*",
     "@antv/g6": "^4.8.21",
     "@fullcalendar/core": "^6.1.4",
     "@fullcalendar/daygrid": "^6.1.4",
@@ -40,8 +40,8 @@
     "vue-router": "^4.2.2"
   },
   "devDependencies": {
-    "@llqm/cli": "workspace:*",
-    "@llqm/app-types-gen": "workspace:*",
+    "llqm-cli": "workspace:*",
+    "llqm-app-types-gen": "workspace:*",
     "@babel/core": "^7.22.9",
     "@babel/preset-env": "^7.22.9",
     "@babel/preset-typescript": "^7.22.5",

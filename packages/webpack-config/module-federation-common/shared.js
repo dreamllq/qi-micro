@@ -59,10 +59,10 @@ module.exports = {
   "date-fns":{
     "singleton": true
   },
-  "@llqm/framework":{
+  "llqm-framework":{
     "singleton": true
   },
-  "@llqm/framework-sdk":{
+  "llqm-framework-sdk":{
     "singleton": true
   }
 }

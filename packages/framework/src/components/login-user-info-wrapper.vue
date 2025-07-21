@@ -7,7 +7,7 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
-import { initLoginUserInfo } from '@llqm/framework-sdk';
+import { initLoginUserInfo } from 'llqm-framework-sdk';
 
 const ready = ref(false);
 

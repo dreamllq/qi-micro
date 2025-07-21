@@ -31,7 +31,7 @@ export default defineConfig({
         '@vueuse/core',
         'vue-router',
         'vue-i18n',
-        '@llqm/vue-permission',
+        'llqm-vue-permission',
         'element-plus',
         '@element-plus/icons-vue',
         'element-plus/dist/locale/zh-cn.mjs',
@@ -42,7 +42,7 @@ export default defineConfig({
         'dayjs/locale/zh-cn.js',
         'moment/dist/locale/ja.js',
         'moment/dist/locale/zh-cn.js',
-        '@llqm/framework-sdk'
+        'llqm-framework-sdk'
       ],
       output: {
         // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
@@ -55,10 +55,10 @@ export default defineConfig({
           '@vueuse/core': '@vueuse/core',
           'vue-router': 'vue-router',
           'vue-i18n': 'vue-i18n',
-          '@llqm/vue-permission': '@llqm/vue-permission',
+          'llqm-vue-permission': 'llqm-vue-permission',
           'element-plus': 'element-plus',
           '@element-plus/icons-vue': '@element-plus/icons-vue',
-          '@llqm/framework-sdk': '@llqm/framework-sdk',
+          'llqm-framework-sdk': 'llqm-framework-sdk',
           'element-plus/dist/locale/zh-cn.mjs': 'element-plus-zh-cn',
           'element-plus/dist/locale/en.mjs': 'element-plus-en',
           'element-plus/dist/locale/ja.mjs': 'element-plus-ja'

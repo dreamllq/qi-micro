@@ -4,8 +4,8 @@ const { spawnSync } = require('node:child_process');
 const cp = require('cp')
 
 module.exports = (options)=>{
-  // webpack --config ./node_modules/@llqm/webpack-config/app/webpack.config.production.cjs && cp manifest.json dist && cp package.json dist
-  const webpackConfigDir = require.resolve('@llqm/webpack-config').replace(`${path.sep}index.js`,'')
+  // webpack --config ./node_modules/llqm-webpack-config/app/webpack.config.production.cjs && cp manifest.json dist && cp package.json dist
+  const webpackConfigDir = require.resolve('llqm-webpack-config').replace(`${path.sep}index.js`,'')
   const webpackConfigPath = path.join(webpackConfigDir, 'app', 'webpack.config.production.cjs')
   spawnSync('webpack-cli', ['--config', webpackConfigPath], {
     cwd: process.cwd(),

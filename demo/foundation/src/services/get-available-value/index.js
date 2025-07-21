@@ -1,5 +1,5 @@
-import { checkPermission } from '@llqm/vue-permission';
-import { appsData } from '@llqm/framework-sdk';
+import { checkPermission } from 'llqm-vue-permission';
+import { appsData } from 'llqm-framework-sdk';
 
 export const getAvailableValue = (operateQueryKeys, defaultValue) => {
   const route = getRouteMessage();

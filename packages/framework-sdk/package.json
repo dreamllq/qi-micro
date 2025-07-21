@@ -1,5 +1,5 @@
 {
-  "name": "@llqm/framework-sdk",
+  "name": "llqm-framework-sdk",
   "version": "0.0.3",
   "description": "> TODO: description",
   "author": "lvliqi <lvliqi_d@163.com>",
@@ -39,7 +39,7 @@
     "url": "https://github.com/dreamllq/qi-micro/issues"
   },
   "devDependencies": {
-    "@llqm/automation-webpack-plugin": "workspace:*",
+    "llqm-automation-webpack-plugin": "workspace:*",
     "@stomp/stompjs": "^7.0.0",
     "@types/jest": "^29.5.1",
     "@types/lodash": "^4.14.194",

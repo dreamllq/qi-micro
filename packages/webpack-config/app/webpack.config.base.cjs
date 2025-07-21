@@ -15,7 +15,7 @@ fs.copyFileSync(path.join(__dirname, '..', 'routes','index.ts'), path.join(__dir
 fs.mkdirSync(path.join(__dirname, '..', 'main',pkg.name), {recursive: true});
 fs.writeFileSync(path.join(__dirname, '..', 'main',pkg.name, 'index.ts'), `
   import main from '@/main.ts';
-  import routes from '@llqm/webpack-config/routes/${pkg.name}/index';
+  import routes from 'llqm-webpack-config/routes/${pkg.name}/index';
 
   export default {
     ...main,

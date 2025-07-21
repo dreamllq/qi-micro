@@ -1,5 +1,5 @@
 import autoRoutes from './auto-routes';
-import { i18n } from '@llqm/framework-sdk';
+import { i18n } from 'llqm-framework-sdk';
 
 export default (autoRoutes as any[]).map(item => {
   if (item.meta && item.meta.title)
