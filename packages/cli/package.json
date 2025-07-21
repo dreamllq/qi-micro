@@ -1,6 +1,6 @@
 {
   "name": "@llqm/cli",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "> TODO: description",
   "author": "lvliqi <lvliqi_d@163.com>",
   "homepage": "https://github.com/dreamllq/qi-micro#readme",
@@ -35,9 +35,9 @@
     "url": "https://github.com/dreamllq/qi-micro/issues"
   },
   "dependencies": {
-    "@llqm/webpack-config": "workspace:*",
-    "@llqm/trans": "workspace:*",
     "@llqm/app-types-gen": "workspace:*",
+    "@llqm/trans": "workspace:*",
+    "@llqm/webpack-config": "workspace:*",
     "@types/jest": "^29.5.5",
     "bonjour": "^3.5.0",
     "cli-table3": "^0.6.3",
