@@ -7,6 +7,7 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "lerna": "^8.2.3"
+    "lerna": "^8.2.3",
+    "webpack-cli": "^5.1.4"
   }
 }

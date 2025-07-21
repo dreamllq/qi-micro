@@ -13,8 +13,9 @@ program
   .description('qi micro微应用ts类型生成')
   .version(pkg.version)
   .option('-n, --npmGroupName <string>', '包组名称')
+  .option('-o, --outDir <string>', '输入目录')
   .action((options)=>{
-    codeGen({npmGroupName: options.npmGroupName});
+    codeGen({npmGroupName: options.npmGroupName,outDir: options.outDir});
   })
 
   program.parse(process.argv);

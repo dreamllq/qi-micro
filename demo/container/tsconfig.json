@@ -31,7 +31,7 @@
     "noImplicitAny": false,
     "typeRoots": [
       "./node_modules/@types",
-      "./node_modules/@llqm-types"
+      "../../exposes-types"
     ],
     "outDir": "ts-dist"
   },

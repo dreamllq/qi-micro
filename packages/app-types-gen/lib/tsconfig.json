@@ -10,24 +10,19 @@
     "module": "ESNext",
     "target": "ESNext",
     "moduleResolution": "node",
-    "outDir": "/Users/llq/Documents/origin/qi-micro/packages/app-types-gen/tests/exposes-types",
-    "rootDir": "/Users/llq/Documents/origin/qi-micro/packages/app-types-gen",
-    "baseUrl": "/Users/llq/Documents/origin/qi-micro/packages/app-types-gen",
+    "outDir": "/Users/llq/Documents/origin/qi-micro/exposes-types/app",
+    "rootDir": "/Users/llq/Documents/origin/qi-micro/demo/app",
+    "baseUrl": "/Users/llq/Documents/origin/qi-micro/demo/app",
     "paths": {
       "@/*": [
-        "./tests/exposes/*",
-        "./tests/exposes/*.vue",
-        "./tests/exposes/*/index.vue"
+        "./src/*",
+        "./src/*.vue",
+        "./src/*/index.vue"
       ]
     }
   },
   "include": [
-    "/Users/llq/Documents/origin/qi-micro/packages/app-types-gen/tests/exposes/components/a.vue",
-    "/Users/llq/Documents/origin/qi-micro/packages/app-types-gen/tests/exposes/components/b/index.vue",
-    "/Users/llq/Documents/origin/qi-micro/packages/app-types-gen/tests/exposes/components/index.vue",
-    "/Users/llq/Documents/origin/qi-micro/packages/app-types-gen/tests/exposes/components/index.js",
-    "/Users/llq/Documents/origin/qi-micro/packages/app-types-gen/tests/exposes/components/b/out.js",
-    "/Users/llq/Documents/origin/qi-micro/packages/app-types-gen/tests/exposes/constants/a.ts",
-    "/Users/llq/Documents/origin/qi-micro/packages/app-types-gen/tests/exposes/constants/b.ts"
+    "/Users/llq/Documents/origin/qi-micro/demo/app/src/locales/index.ts",
+    "/Users/llq/Documents/origin/qi-micro/demo/app/src/permission-keys/index.ts"
   ]
 }
