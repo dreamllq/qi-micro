@@ -7,7 +7,8 @@
     "start": "qm serve -p 8080",
     "dev": "nodemon",
     "build": "qm build",
-    "preversion": "qm-npm-preversion"
+    "preversion": "qm-npm-preversion",
+    "gen-version": "node ./gen-version.js"
   },
   "author": "",
   "license": "ISC",
