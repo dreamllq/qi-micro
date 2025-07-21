@@ -5,6 +5,9 @@
     "packages/*",
     "demo/*"
   ],
+  "scripts": {
+    "publish-expose-types": "lerna run publish-expose-types --scope app --scope foundation"
+  },
   "dependencies": {},
   "devDependencies": {
     "lerna": "^8.2.3",
