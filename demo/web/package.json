@@ -4,12 +4,10 @@
   "private": true,
   "description": "发包用途",
   "scripts": {
-    "download": "qm download -dev",
     "start": "qm serve -p 8080",
     "dev": "nodemon",
     "build": "qm build",
-    "preversion": "qm-npm-preversion",
-    "postversion": "git push && git push --tags"
+    "preversion": "qm-npm-preversion"
   },
   "author": "",
   "license": "ISC",

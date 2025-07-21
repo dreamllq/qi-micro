@@ -11,8 +11,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "test": "qm test",
     "trans": "qm trans",
-    "preversion": "qm-npm-preversion && npm run test",
-    "postversion": "git push && git push --tags"
+    "preversion": "qm-npm-preversion && npm run test"
   },
   "dependencies": {
     "llqm-framework": "workspace:*",

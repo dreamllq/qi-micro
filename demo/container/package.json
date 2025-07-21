@@ -7,8 +7,7 @@
     "build": "qm build",
     "preview": "qm preview",
     "lint": "eslint ./src/**/*.vue ./src/**/*.js --fix",
-    "preversion": "qm-npm-preversion",
-    "postversion": "git push && git push --tags"
+    "preversion": "qm-npm-preversion"
   },
   "dependencies": {
     "llqm-framework-sdk": "workspace:*",
