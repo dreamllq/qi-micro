@@ -5,7 +5,7 @@
       "type": "foundation"
     },
     "app": {
-      "type": "mps"
+      "type": "app"
     }
   },
   "shared": {},

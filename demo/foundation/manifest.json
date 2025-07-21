@@ -1,0 +1,8 @@
+{
+  "type": "app",
+  "dependencies": {},
+  "shared": {},
+  "exposes": {
+    "./start": "./src/bootstrap/start/index.ts"
+  }
+}
