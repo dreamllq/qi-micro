@@ -38,12 +38,6 @@ importers:
       '@fullcalendar/vue3':
         specifier: ^6.1.4
         version: 6.1.18(@fullcalendar/core@6.1.18)(vue@3.5.17(typescript@4.9.5))
-      'llqm-framework-sdk':
-        specifier: workspace:*
-        version: link:../../packages/framework-sdk
-      'llqm-webpack-config':
-        specifier: workspace:*
-        version: link:../../packages/webpack-config
       '@vueuse/core':
         specifier: ^9.13.0
         version: 9.13.0(vue@3.5.17(typescript@4.9.5))
@@ -56,6 +50,12 @@ importers:
       element-plus:
         specifier: ^2.3.8
         version: 2.10.4(vue@3.5.17(typescript@4.9.5))
+      llqm-framework-sdk:
+        specifier: workspace:*
+        version: link:../../packages/framework-sdk
+      llqm-webpack-config:
+        specifier: workspace:*
+        version: link:../../packages/webpack-config
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
@@ -96,12 +96,6 @@ importers:
       '@babel/preset-typescript':
         specifier: ^7.22.5
         version: 7.27.1(@babel/core@7.28.0)
-      'llqm-app-types-gen':
-        specifier: workspace:*
-        version: link:../../packages/app-types-gen
-      'llqm-cli':
-        specifier: workspace:*
-        version: link:../../packages/cli
       '@types/lodash':
         specifier: ^4.14.191
         version: 4.17.20
@@ -126,6 +120,12 @@ importers:
       lint-staged:
         specifier: ^12.5.0
         version: 12.5.0(enquirer@2.3.6)
+      llqm-app-types-gen:
+        specifier: workspace:*
+        version: link:../../packages/app-types-gen
+      llqm-cli:
+        specifier: workspace:*
+        version: link:../../packages/cli
       stylelint:
         specifier: ^16.22.0
         version: 16.22.0(typescript@4.9.5)
@@ -144,12 +144,6 @@ importers:
 
   demo/container:
     dependencies:
-      'llqm-automation-webpack-plugin':
-        specifier: workspace:*
-        version: link:../../packages/automation-webpack-plugin
-      'llqm-framework-sdk':
-        specifier: workspace:*
-        version: link:../../packages/framework-sdk
       '@stomp/stompjs':
         specifier: ^7.0.0
         version: 7.1.1
@@ -168,6 +162,12 @@ importers:
       json-bigint:
         specifier: ^1.0.0
         version: 1.0.0
+      llqm-automation-webpack-plugin:
+        specifier: workspace:*
+        version: link:../../packages/automation-webpack-plugin
+      llqm-framework-sdk:
+        specifier: workspace:*
+        version: link:../../packages/framework-sdk
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
@@ -208,9 +208,6 @@ importers:
       '@babel/preset-typescript':
         specifier: ^7.22.5
         version: 7.27.1(@babel/core@7.28.0)
-      'llqm-cli':
-        specifier: workspace:*
-        version: link:../../packages/cli
       '@types/lodash':
         specifier: ^4.14.191
         version: 4.17.20
@@ -229,6 +226,9 @@ importers:
       lint-staged:
         specifier: ^12.5.0
         version: 12.5.0(enquirer@2.3.6)
+      llqm-cli:
+        specifier: workspace:*
+        version: link:../../packages/cli
       stylelint:
         specifier: ^16.22.0
         version: 16.22.0(typescript@4.9.5)
@@ -247,15 +247,6 @@ importers:
 
   demo/foundation:
     dependencies:
-      'llqm-framework':
-        specifier: workspace:*
-        version: link:../../packages/framework
-      'llqm-framework-sdk':
-        specifier: workspace:*
-        version: link:../../packages/framework-sdk
-      'llqm-vue-permission':
-        specifier: workspace:*
-        version: link:../../packages/vue-permission
       '@stomp/stompjs':
         specifier: ^7.0.0
         version: 7.1.1
@@ -274,6 +265,15 @@ importers:
       json-bigint:
         specifier: ^1.0.0
         version: 1.0.0
+      llqm-framework:
+        specifier: workspace:*
+        version: link:../../packages/framework
+      llqm-framework-sdk:
+        specifier: workspace:*
+        version: link:../../packages/framework-sdk
+      llqm-vue-permission:
+        specifier: workspace:*
+        version: link:../../packages/vue-permission
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
@@ -320,12 +320,6 @@ importers:
         specifier: ^4.2.2
         version: 4.5.1(vue@3.5.17(typescript@4.9.5))
     devDependencies:
-      'llqm-app-types-gen':
-        specifier: workspace:*
-        version: link:../../packages/app-types-gen
-      'llqm-cli':
-        specifier: workspace:*
-        version: link:../../packages/cli
       '@types/lodash':
         specifier: ^4.14.191
         version: 4.17.20
@@ -347,6 +341,12 @@ importers:
       lint-staged:
         specifier: ^12.5.0
         version: 12.5.0(enquirer@2.3.6)
+      llqm-app-types-gen:
+        specifier: workspace:*
+        version: link:../../packages/app-types-gen
+      llqm-cli:
+        specifier: workspace:*
+        version: link:../../packages/cli
       stylelint:
         specifier: ^16.22.0
         version: 16.22.0(typescript@4.9.5)
@@ -365,7 +365,7 @@ importers:
 
   demo/web:
     devDependencies:
-      'llqm-cli':
+      llqm-cli:
         specifier: workspace:*
         version: link:../../packages/cli
       nodemon:
@@ -405,15 +405,6 @@ importers:
 
   packages/cli:
     dependencies:
-      'llqm-app-types-gen':
-        specifier: workspace:*
-        version: link:../app-types-gen
-      'llqm-trans':
-        specifier: workspace:*
-        version: link:../trans
-      'llqm-webpack-config':
-        specifier: workspace:*
-        version: link:../webpack-config
       '@types/jest':
         specifier: ^29.5.5
         version: 29.5.14
@@ -447,6 +438,15 @@ importers:
       jest:
         specifier: ^29.7.0
         version: 29.7.0(@types/node@20.19.8)(ts-node@10.9.1(@types/node@20.19.8)(typescript@5.8.3))
+      llqm-app-types-gen:
+        specifier: workspace:*
+        version: link:../app-types-gen
+      llqm-trans:
+        specifier: workspace:*
+        version: link:../trans
+      llqm-webpack-config:
+        specifier: workspace:*
+        version: link:../webpack-config
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
@@ -471,12 +471,6 @@ importers:
       '@element-plus/icons-vue':
         specifier: ^2.3.1
         version: 2.3.1(vue@3.5.17(typescript@5.2.2))
-      'llqm-framework-sdk':
-        specifier: workspace:*
-        version: link:../framework-sdk
-      'llqm-vue-permission':
-        specifier: workspace:*
-        version: link:../vue-permission
       '@types/jest':
         specifier: ^29.5.1
         version: 29.5.14
@@ -525,6 +519,12 @@ importers:
       lint-staged:
         specifier: ^13.2.2
         version: 13.3.0(enquirer@2.3.6)
+      llqm-framework-sdk:
+        specifier: workspace:*
+        version: link:../framework-sdk
+      llqm-vue-permission:
+        specifier: workspace:*
+        version: link:../vue-permission
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
@@ -600,9 +600,6 @@ importers:
 
   packages/framework-sdk:
     devDependencies:
-      'llqm-automation-webpack-plugin':
-        specifier: workspace:*
-        version: link:../automation-webpack-plugin
       '@stomp/stompjs':
         specifier: ^7.0.0
         version: 7.1.1
@@ -651,6 +648,9 @@ importers:
       lint-staged:
         specifier: ^13.2.2
         version: 13.3.0(enquirer@2.3.6)
+      llqm-automation-webpack-plugin:
+        specifier: workspace:*
+        version: link:../automation-webpack-plugin
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
@@ -865,15 +865,6 @@ importers:
       '@babel/preset-typescript':
         specifier: ^7.22.5
         version: 7.27.1(@babel/core@7.28.0)
-      'llqm-automation-webpack-plugin':
-        specifier: workspace:*
-        version: link:../automation-webpack-plugin
-      'llqm-framework-sdk':
-        specifier: workspace:*
-        version: link:../framework-sdk
-      'llqm-webpack-config':
-        specifier: workspace:*
-        version: 'link:'
       '@vue/babel-plugin-jsx':
         specifier: ^1.1.5
         version: 1.4.0(@babel/core@7.28.0)
@@ -901,6 +892,15 @@ importers:
       html-webpack-plugin:
         specifier: ^5.5.3
         version: 5.6.3(webpack@5.88.2(webpack-cli@5.1.4(webpack@5.100.2)))
+      llqm-automation-webpack-plugin:
+        specifier: workspace:*
+        version: link:../automation-webpack-plugin
+      llqm-framework-sdk:
+        specifier: workspace:*
+        version: link:../framework-sdk
+      llqm-webpack-config:
+        specifier: workspace:*
+        version: 'link:'
       mini-css-extract-plugin:
         specifier: ^2.7.6
         version: 2.9.2(webpack@5.88.2(webpack-cli@5.1.4(webpack@5.100.2)))
