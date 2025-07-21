@@ -5,14 +5,21 @@
   "author": "lvliqi <lvliqi_d@163.com>",
   "homepage": "https://github.com/dreamllq/qi-micro#readme",
   "license": "ISC",
-  "main": "lib/trans.js",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
+  "main": "index.js",
+  "scripts": {
+    "test": "./bin/qm-trans -cn locales/zh-cn/index.ts -en locales/en/index.ts -ja locales/ja/index.ts -o locales -f",
+    "build": "tsc --outDir lib src/index"
+  },
+  "bin": {
+    "qm-trans": "./bin/qm-trans"
   },
   "files": [
-    "lib"
+    "/bin",
+    "/lib"
   ],
+  "directories": {
+    "lib": "lib"
+  },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
@@ -20,10 +27,19 @@
     "type": "git",
     "url": "git+https://github.com/dreamllq/qi-micro.git"
   },
-  "scripts": {
-    "test": "node ./__tests__/trans.test.js"
-  },
   "bugs": {
     "url": "https://github.com/dreamllq/qi-micro/issues"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "commander": "^11.0.0",
+    "md5": "^2.3.0",
+    "ts-node": "10.9.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.1",
+    "eslint": "^8.49.0",
+    "lodash": "^4.17.21",
+    "typescript": "5.2.2"
   }
 }
