@@ -9,10 +9,27 @@ const process = require('process')
 const pkg = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'package.json'), 'utf8'))
 const manifest = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'manifest.json'), 'utf8'))
 
+fs.mkdirSync(path.join(__dirname, '..', 'routes',pkg.name), {recursive:true});
+fs.copyFileSync(path.join(__dirname, '..', 'routes','index.ts'), path.join(__dirname, '..', 'routes',pkg.name,'index.ts'))
+
+fs.mkdirSync(path.join(__dirname, '..', 'main',pkg.name), {recursive: true});
+fs.writeFileSync(path.join(__dirname, '..', 'main',pkg.name, 'index.ts'), `
+  import main from '@/main.ts';
+  import routes from '@llqm/webpack-config/routes/${pkg.name}/index';
+
+  export default {
+    ...main,
+    routes
+  }
+`)
+
+fs.mkdirSync(path.join(__dirname, '..', 'public-path',pkg.name), {recursive:true});
+fs.copyFileSync(path.join(__dirname, '..', 'public-path','index.ts'), path.join(__dirname, '..', 'public-path',pkg.name,'index.ts'))
+
 module.exports = () => ({
   cache: { type: 'memory' },
   entry: {
-    [pkg.name]: path.join(__dirname, 'public-path.ts')
+    [pkg.name]: path.join(__dirname,'..', 'public-path',pkg.name, 'index.ts')
   },
   output: {
     path: path.join(process.cwd(), 'dist'),
@@ -96,7 +113,7 @@ module.exports = () => ({
     new VueAutoRoutingPlugin({
       pages: 'src/pages',
       importPrefix: '@/pages/',
-      outFile: path.join(__dirname, '..', 'routes', 'auto-routes.js'),
+      outFile: path.join(__dirname, '..', 'routes',pkg.name, 'auto-routes.js'),
       nested: true
     }),
     new DefinePlugin({

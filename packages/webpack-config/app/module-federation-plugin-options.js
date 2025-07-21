@@ -16,10 +16,10 @@ module.exports = (env)=>{
     filename: 'remoteEntry.js',
     exposes: {
       ...manifest.exposes,
-      "./main":path.join(__dirname, '..', 'main', 'index.ts'),
+      "./main":path.join(__dirname, '..', 'main', pkg.name, 'index.ts'),
       "./locales": "./src/locales/index.ts",
-      "./routes": path.join(__dirname, '..', 'routes', 'index.ts'),
-      "./public-path": path.join(__dirname, 'public-path.ts')
+      "./routes": path.join(__dirname, '..', 'routes', pkg.name, 'index.ts'),
+      "./public-path": path.join(__dirname, '..', 'public-path', pkg.name, 'index.ts')
     },
     library: { type: 'module' },
     remoteType: 'module',

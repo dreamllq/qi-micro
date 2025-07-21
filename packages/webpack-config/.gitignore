@@ -26,4 +26,13 @@ lib
 
 manifest.json
 dist
-auto-routes.js
+
+public-path/**/*.ts
+!public-path/index.ts
+
+main/**/*.ts
+!main/index.ts
+
+routes/**/*.ts
+routes/**/*.js
+!routes/index.ts
