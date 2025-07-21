@@ -7,8 +7,7 @@
   "license": "ISC",
   "main": "lib/index.js",
   "bin": {
-    "qm-app-types-gen": "./bin/qm-app-types-gen",
-    "qm-app-types-publish": "./bin/qm-app-types-publish"
+    "qm-app-types-gen": "./bin/qm-app-types-gen"
   },
   "files": [
     "/lib",
