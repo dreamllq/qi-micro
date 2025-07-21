@@ -6,7 +6,14 @@
     "demo/*"
   ],
   "scripts": {
-    "publish-expose-types": "rm -rf ./exposes-types && lerna run publish-expose-types --scope app --scope foundation"
+    "gen-expose-types": "rm -rf ./exposes-types && lerna run gen-expose-types --scope='{app,foundation}'",
+    "build-micro": "lerna run build --scope='{container,app,foundation}'",
+    "build-web": "lerna run build --scope='web'",
+    "build": "npm run clear-build && npm run build-micro && npm run copy-all-dist && npm run build-web",
+    "copy-container": "lerna exec --scope='container' -- cp -r ./dist/* ../web/public",
+    "copy-apps": "mkdir ./demo/web/public/app && lerna exec --scope='{app,foundation}' -- mkdir ../web/public/app/\\$LERNA_PACKAGE_NAME && lerna exec --scope='{app,foundation}' -- cp -r ./dist/* ../web/public/app/\\$LERNA_PACKAGE_NAME",
+    "clear-build": "rm -rf ./demo/web/public/*",
+    "copy-all-dist": "npm run copy-container && npm run copy-apps"
   },
   "dependencies": {},
   "devDependencies": {
