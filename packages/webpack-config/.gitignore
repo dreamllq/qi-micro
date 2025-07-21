@@ -32,6 +32,7 @@ public-path/**/*.ts
 
 main/**/*.ts
 !main/index.ts
+!main/container.ts
 
 routes/**/*.ts
 routes/**/*.js

@@ -4,7 +4,7 @@ export {
   setSiteId, getSiteId, clearSiteId 
 } from './services/site';
 
-export { getLanguage, setLanguage } from './services/language';
+export { getLanguage, setLanguage, Language } from './services/language';
 
 export { getLoginUserInfo, initLoginUserInfo } from './services/login-user';
 

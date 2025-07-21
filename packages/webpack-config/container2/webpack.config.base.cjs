@@ -8,7 +8,7 @@ const manifest = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'manifest.j
 const pkg = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'package.json'), 'utf8'))
 
 module.exports = ({ projectEnv = {} }) => ({
-  entry: path.join(process.cwd(), 'src/main.ts'),
+  entry: path.join(__dirname, '..', 'main', 'container.ts'),
   output: {
     path: path.join(process.cwd(), 'dist'),
     filename: 'assets/[name].[contenthash:6].js',

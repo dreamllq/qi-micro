@@ -1,13 +1,13 @@
 {
-  "name": "scpo-sys-web",
-  "version": "1.7.0-2",
-  "description": "aps 发包用途",
+  "name": "web",
+  "version": "0.0.0",
+  "description": "发包用途",
   "scripts": {
-    "download": "alsi download -dev",
-    "start": "alsi serve -p 8080",
+    "download": "qm download -dev",
+    "start": "qm serve -p 8080",
     "dev": "nodemon",
-    "build": "alsi build",
-    "preversion": "alsi-npm-preversion",
+    "build": "qm build",
+    "preversion": "qm-npm-preversion",
     "postversion": "git push && git push --tags"
   },
   "author": "",
