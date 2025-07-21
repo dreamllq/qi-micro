@@ -1,11 +1,1 @@
-# `framework-sdk`
-
-> TODO: description
-
-## Usage
-
-```
-const frameworkSdk = require('framework-sdk');
-
-// TODO: DEMONSTRATE API
-```
+# vite-vue3-ts-component-template
