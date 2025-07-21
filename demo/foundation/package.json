@@ -6,7 +6,7 @@
     "dev": "qm serve",
     "build": "qm build",
     "preview": "qm preview",
-    "publish-expose-types": "qm-app-types-gen -n foundation -o ../../exposes-types/foundation",
+    "publish-expose-types": "qm types-gen -o ../../exposes-types",
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "test": "qm test",

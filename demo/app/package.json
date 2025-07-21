@@ -7,7 +7,7 @@
     "build": "qm build",
     "preview": "qm preview",
     "trans": "qm trans",
-    "publish-expose-types": "qm-app-types-gen -n app -o ../../exposes-types/app",
+    "publish-expose-types": "qm types-gen -o ../../exposes-types",
     "type-check": "vue-tsc --noEmit -p tsconfig.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "test": "qm test",

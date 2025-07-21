@@ -6,7 +6,7 @@
     "demo/*"
   ],
   "scripts": {
-    "publish-expose-types": "lerna run publish-expose-types --scope app --scope foundation"
+    "publish-expose-types": "rm -rf ./exposes-types && lerna run publish-expose-types --scope app --scope foundation"
   },
   "dependencies": {},
   "devDependencies": {

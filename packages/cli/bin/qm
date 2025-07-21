@@ -103,8 +103,9 @@ program.command('trans')
 
 program.command('types-gen')
   .description('生成项目exposes定义的模块类型')
-  .option('-t, --type <app | container>', '项目类型，容器、应用')
-  .option('-ap, --auto-publish', '是否自动发包', false)
+  // .option('-t, --type <app | container>', '项目类型，容器、应用')
+  // .option('-ap, --auto-publish', '是否自动发包', false)
+  .option('-o, --outDir <string>', '输入目录')
   .action((options)=>{
     require('../lib/common/types-gen')(options)
   })

@@ -8,7 +8,7 @@ import { i18n, global, appsData } from 'llqm-framework-sdk';
 
 export default () => {
   start({
-    defaultPage: '/app',
+    defaultPage: '/app/demo',
     fullView: [/login\//],
     layout: Layout,
     i18n,
