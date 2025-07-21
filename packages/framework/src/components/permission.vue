@@ -10,7 +10,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
-import { checkPermission } from '@alsi/vue-permission';
+import { checkPermission } from '@llqm/vue-permission';
 import Forbidden from './forbidden.vue';
 
 const route = useRoute();

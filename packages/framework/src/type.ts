@@ -1,4 +1,4 @@
-import { CreatePermission, Permission } from '@alsi/vue-permission';
+import { CreatePermission, Permission } from '@llqm/vue-permission';
 import { Component, App } from 'vue';
 import { I18n } from 'vue-i18n';
 import { Router } from 'vue-router';

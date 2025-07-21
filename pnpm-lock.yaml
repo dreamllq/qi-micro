@@ -380,6 +380,9 @@ importers:
 
   packages/framework:
     devDependencies:
+      '@element-plus/icons-vue':
+        specifier: ^2.3.1
+        version: 2.3.1(vue@3.5.17(typescript@5.2.2))
       '@llqm/framework-sdk':
         specifier: workspace:*
         version: link:../framework-sdk

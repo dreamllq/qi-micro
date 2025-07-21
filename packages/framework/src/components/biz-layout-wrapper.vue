@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import { getLoginUserInfo } from '@alsi/micro-framework-sdk';
+import { getLoginUserInfo } from '@llqm/framework-sdk';
 
 const props = defineProps({
   beforeLayoutMount: {
