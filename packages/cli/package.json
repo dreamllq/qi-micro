@@ -15,7 +15,8 @@
     "./utils",
     "./lib",
     "./constants",
-    "./configs"
+    "./configs",
+    "./schemas"
   ],
   "directories": {
     "lib": "lib",
