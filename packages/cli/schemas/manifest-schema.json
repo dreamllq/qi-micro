@@ -13,34 +13,108 @@
       "description": "The type of the micro",
       "enum": [
         "app",
-        "container"
+        "container",
+        "project"
       ]
-    },
-    "dependencies": {
-      "type": "object",
-      "description": "The dependencies of the micro",
-      "additionalProperties": {
-        "type": "object",
+    }
+  },
+  "oneOf": [
+    {
+      "if": {
         "properties": {
           "type": {
-            "type": "string",
-            "description": "type name"
+            "const": "app"
+          }
+        }
+      },
+      "then": {
+        "$ref": "#/definitions/microFields"
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "container"
+          }
+        }
+      },
+      "then": {
+        "$ref": "#/definitions/microFields"
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "project"
+          }
+        }
+      },
+      "then": {
+        "$ref": "#/definitions/projectFields"
+      }
+    }
+  ],
+  "definitions": {
+    "microFields": {
+      "properties": {
+        "dependencies": {
+          "type": "object",
+          "description": "The dependencies of the micro",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "description": "type name"
+              }
+            }
+          }
+        },
+        "shared": {
+          "type": "object",
+          "description": "The shared dependencies of the micro",
+          "additionalProperties": {
+            "type": "object"
+          }
+        },
+        "exposes": {
+          "type": "object",
+          "description": "The exposed of the micro",
+          "additionalProperties": {
+            "type": "string"
           }
         }
       }
     },
-    "shared": {
-      "type": "object",
-      "description": "The shared dependencies of the micro",
-      "additionalProperties": {
-        "type": "object"
-      }
-    },
-    "exposes": {
-      "type": "object",
-      "description": "The exposed of the micro",
-      "additionalProperties": {
-        "type": "string"
+    "projectFields": {
+      "properties": {
+        "container": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            }
+          }
+        },
+        "apps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              }
+            }
+          }
+        }
       }
     }
   }
