@@ -45,7 +45,6 @@
     "html-webpack-plugin": "^5.5.3",
     "llqm-automation-webpack-plugin": "workspace:*",
     "llqm-framework-sdk": "workspace:*",
-    "llqm-webpack-config": "workspace:*",
     "mini-css-extract-plugin": "^2.7.6",
     "postcss-html": "^1.5.0",
     "postcss-loader": "^7.3.3",
