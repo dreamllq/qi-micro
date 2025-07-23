@@ -898,9 +898,6 @@ importers:
       llqm-framework-sdk:
         specifier: workspace:*
         version: link:../framework-sdk
-      llqm-webpack-config:
-        specifier: workspace:*
-        version: 'link:'
       mini-css-extract-plugin:
         specifier: ^2.7.6
         version: 2.9.2(webpack@5.88.2(webpack-cli@5.1.4(webpack@5.100.2)))
