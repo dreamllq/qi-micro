@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "qi-micro-manifest",
+  "title": "JSON schema for qi micro configuration",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "The JSON schema version used to validate this configuration file"
+    },
+    "type": {
+      "type": "string",
+      "description": "The type of the micro",
+      "enum": [
+        "app",
+        "container"
+      ]
+    },
+    "dependencies": {
+      "type": "object",
+      "description": "The dependencies of the micro",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "type name"
+          }
+        }
+      }
+    },
+    "shared": {
+      "type": "object",
+      "description": "The shared dependencies of the micro",
+      "additionalProperties": {
+        "type": "object"
+      }
+    },
+    "exposes": {
+      "type": "object",
+      "description": "The exposed of the micro",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  }
+}
