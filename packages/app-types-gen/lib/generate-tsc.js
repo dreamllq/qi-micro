@@ -16,7 +16,8 @@ module.exports = (exposes, {outDir}) => {
 }
 
 const genCode = (files, outDir)=>{
-  const command = path.join(process.cwd(), 'node_modules', '.bin', 'vue-tsc')
+  // const command = path.join(process.cwd(), 'node_modules', '.bin', 'vue-tsc')
+  const command = 'vue-tsc'
   genTsconfig({files, outDir});
   spawnSync(command, ['-p', path.join(__dirname, 'tsconfig.json')], {
     cwd: process.cwd(),
@@ -24,9 +25,9 @@ const genCode = (files, outDir)=>{
     shell: process.platform === 'win32'
   });
 
-  spawnSync(path.join(process.cwd(), 'node_modules', '.bin', 'resolve-tspaths'), ['-p', path.join(__dirname, 'tsconfig.json'), '--verbose'], {
+  spawnSync('resolve-tspaths', ['-p', path.join(__dirname, 'tsconfig.json'), '--verbose'], {
     cwd: process.cwd(),
-    stdio: [process.stdin, process.stdout, process.stderr],
+    // stdio: [process.stdin, process.stdout, process.stderr],
     shell: process.platform === 'win32'
   });
 }

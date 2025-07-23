@@ -11,7 +11,8 @@
     "/container2",
     "/module-federation-common",
     "/routes",
-    "/main"
+    "/main",
+    "/public-path"
   ],
   "directories": {
     "lib": "lib",

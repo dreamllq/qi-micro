@@ -10,9 +10,9 @@
     "module": "ESNext",
     "target": "ESNext",
     "moduleResolution": "node",
-    "outDir": "/Users/llq/Documents/origin/qi-micro/exposes-types/foundation",
-    "rootDir": "/Users/llq/Documents/origin/qi-micro/demo/foundation",
-    "baseUrl": "/Users/llq/Documents/origin/qi-micro/demo/foundation",
+    "outDir": "/Users/llq/Documents/origin/qi-micro/exposes-types/app",
+    "rootDir": "/Users/llq/Documents/origin/qi-micro/demo/app",
+    "baseUrl": "/Users/llq/Documents/origin/qi-micro/demo/app",
     "paths": {
       "@/*": [
         "./src/*",
@@ -22,7 +22,7 @@
     }
   },
   "include": [
-    "/Users/llq/Documents/origin/qi-micro/demo/foundation/src/locales/index.ts",
-    "/Users/llq/Documents/origin/qi-micro/demo/foundation/src/bootstrap/start/index.ts"
+    "/Users/llq/Documents/origin/qi-micro/demo/app/src/locales/index.ts",
+    "/Users/llq/Documents/origin/qi-micro/demo/app/src/permission-keys/index.ts"
   ]
 }
