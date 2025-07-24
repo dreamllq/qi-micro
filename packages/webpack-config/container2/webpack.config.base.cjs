@@ -35,6 +35,19 @@ module.exports = ({ projectEnv = {} }) => ({
   module: {
     rules: [
       {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: require.resolve('babel-loader'),
+          options: { presets: [['@babel/preset-env', {
+            "useBuiltIns": "usage",
+            "corejs": 3,
+            "modules": false
+          }]] } 
+        },
+        resolve: { fullySpecified: false }
+      },
+      {
         test: /\.vue$/,
         use: require.resolve('vue-loader')
       },

@@ -19,6 +19,7 @@
   "dependencies": {},
   "devDependencies": {
     "lerna": "^8.2.3",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "llqm-webpack-config": "workspace:*"
   }
 }

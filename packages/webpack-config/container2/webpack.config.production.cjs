@@ -25,15 +25,6 @@ module.exports = (env = {}) => {
     module: {
       rules: [
         {
-          test: /\.m?js$/,
-          exclude: /node_modules/,
-          use: {
-            loader: require.resolve('babel-loader'),
-            options: { presets: ['@babel/preset-env'] } 
-          },
-          resolve: { fullySpecified: false }
-        },
-        {
           test: /\.(css|scss)$/,
           use: [
             {

@@ -11,6 +11,9 @@ importers:
       lerna:
         specifier: ^8.2.3
         version: 8.2.3(encoding@0.1.13)
+      llqm-webpack-config:
+        specifier: workspace:*
+        version: link:packages/webpack-config
       webpack-cli:
         specifier: ^5.1.4
         version: 5.1.4(webpack@5.100.2)
