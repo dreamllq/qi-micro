@@ -111,6 +111,9 @@
               },
               "version": {
                 "type": "string"
+              },
+              "remoteHost": {
+                "type": "string"
               }
             }
           }

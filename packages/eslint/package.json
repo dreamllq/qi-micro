@@ -1,0 +1,32 @@
+{
+  "name": "llqm-eslint",
+  "version": "1.0.0-alpha.6",
+  "description": "> TODO: description",
+  "author": "lvliqi <lvliqi_d@163.com>",
+  "homepage": "https://github.com/dreamllq/qi-micro#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dreamllq/qi-micro.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/eslint.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/dreamllq/qi-micro/issues"
+  },
+  "dependencies": {
+    "@eslint/js": "^9.31.0",
+    "eslint": "^9.31.0",
+    "eslint-plugin-vue": "^10.3.0",
+    "globals": "^16.3.0",
+    "typescript-eslint": "^8.38.0"
+  }
+}
