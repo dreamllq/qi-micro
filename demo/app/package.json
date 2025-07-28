@@ -59,8 +59,7 @@
     "vue-tsc": "^1.0.24"
   },
   "browserslist": [
-    "> 0.2%",
-    "chrome >= 45",
+    "> 1%",
     "not dead"
   ]
 }

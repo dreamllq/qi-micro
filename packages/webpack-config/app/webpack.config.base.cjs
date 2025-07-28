@@ -3,7 +3,6 @@ const { VueLoaderPlugin } = require('vue-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { DefinePlugin, ProgressPlugin } = require('webpack');
 const VueAutoRoutingPlugin = require('vue-auto-routing/lib/webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const fs = require('fs');
 const process = require('process')
 const pkg = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'package.json'), 'utf8'))
@@ -54,19 +53,6 @@ module.exports = () => ({
   module: {
     rules: [
       {
-        test: /\.m?js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: require.resolve('babel-loader'),
-          options: { presets: [['@babel/preset-env', {
-            "useBuiltIns": "usage",
-            "corejs": 3,
-            "modules": false
-          }]] } 
-        },
-        resolve: { fullySpecified: false }
-      },
-      {
         test: /\.vue$/,
         use: require.resolve('vue-loader')
       },
@@ -83,27 +69,6 @@ module.exports = () => ({
       {
         test: /\.(png|svg|jpg|gif)$/,
         type: 'asset'
-      },
-      {
-        test: /\.(css|scss)$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {}
-          },
-          require.resolve('css-loader'),
-          require.resolve('postcss-loader'),
-          {
-            loader: require.resolve("sass-loader"),
-            options: {
-              implementation: require("sass"),
-              sassOptions: {
-                outputStyle: 'expanded',
-                silenceDeprecations: ['legacy-js-api'],
-              },
-            },
-          }
-        ]
       },
       {
         test: /\.(ttf|eot|woff|woff2)$/,
@@ -127,7 +92,6 @@ module.exports = () => ({
       __APP_NAME__: JSON.stringify(pkg.name),
       __VERSION__: JSON.stringify(`v${pkg.version}`)
     }),
-    new MiniCssExtractPlugin({ filename: 'assets/[name].[contenthash:8].css' }),
     new HtmlWebpackPlugin({
       template: 'index.ejs',
       inject: false

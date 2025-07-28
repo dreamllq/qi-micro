@@ -25,6 +25,19 @@ module.exports = (env = {}) => {
     module: {
       rules: [
         {
+          test: /\.m?js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: require.resolve('babel-loader'),
+            options: { presets: [['@babel/preset-env', {
+              "useBuiltIns": "usage",
+              "corejs": 3,
+              "modules": false
+            }]] } 
+          },
+          resolve: { fullySpecified: false }
+        },
+        {
           test: /\.(css|scss)$/,
           use: [
             {
@@ -33,7 +46,16 @@ module.exports = (env = {}) => {
             },
             require.resolve('css-loader'),
             require.resolve('postcss-loader'),
-            require.resolve('sass-loader')
+            {
+              loader: require.resolve("sass-loader"),
+              options: {
+                implementation: require("sass"),
+                sassOptions: {
+                  outputStyle: 'expanded',
+                  silenceDeprecations: ['legacy-js-api'],
+                },
+              },
+            }
           ]
         }
       ]

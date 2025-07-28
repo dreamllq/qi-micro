@@ -23,17 +23,30 @@ module.exports = (env = { port: 8080 }) => {
     devtool: 'eval-cheap-module-source-map',
     module: {
       rules: [
-        {
-          test: /\.m?js$/,
-          exclude: /node_modules/,
-          resolve: { fullySpecified: false }
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: require.resolve('babel-loader'),
+          options: { presets: [['@babel/preset-env', { "useBuiltIns": false }]] } 
         },
+        resolve: { fullySpecified: false }
+      },
         {
           test: /\.(css|scss)$/,
           use: [
             require.resolve('style-loader'),
             require.resolve('css-loader'),
-            require.resolve('sass-loader')
+            {
+              loader: require.resolve("sass-loader"),
+              options: {
+                implementation: require("sass"),
+                sassOptions: {
+                  outputStyle: 'expanded',
+                  silenceDeprecations: ['legacy-js-api'],
+                },
+              },
+            }
           ]
         }
       ]

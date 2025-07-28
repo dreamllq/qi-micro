@@ -17,6 +17,36 @@ module.exports = (env = { port: 7777 }) => {
     mode: 'development',
     devtool: 'source-map',
     output: { publicPath: 'auto' },
+    module:{
+      rules:[
+        {
+          test: /\.m?js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: require.resolve('babel-loader'),
+            options: { presets: [['@babel/preset-env', { "useBuiltIns": false }]] } 
+          },
+          resolve: { fullySpecified: false }
+        },
+        {
+          test: /\.(css|scss)$/,
+          use: [
+            require.resolve('css-loader'),
+            require.resolve('postcss-loader'),
+            {
+              loader: require.resolve("sass-loader"),
+              options: {
+                implementation: require("sass"),
+                sassOptions: {
+                  outputStyle: 'expanded',
+                  silenceDeprecations: ['legacy-js-api'],
+                },
+              },
+            }
+          ]
+        },
+      ],
+    },
     plugins: [
       new ModuleFederationPlugin({
         ...moduleFederationPluginOptions('development'),
