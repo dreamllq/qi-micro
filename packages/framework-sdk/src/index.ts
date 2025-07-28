@@ -21,3 +21,5 @@ export { default as env, setEnv } from './services/env';
 export { default as global } from './services/global';
 
 export { router } from './services/router';
+
+export {type MenuItem, type MenuConfig, type MenuItemConfig} from './type'
