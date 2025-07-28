@@ -4,7 +4,7 @@ module.exports = ({name, version, groupName='@llqm-types', exposes}, { outDir })
   const packageJson = {
     "name": `${groupName}/${name}`,
     "version": `${version}`,
-    "main": "index.d.ts",
+    "main": "",
     "scripts": {
       "publish:latest": "npm publish"
     },
@@ -13,4 +13,5 @@ module.exports = ({name, version, groupName='@llqm-types', exposes}, { outDir })
   };
 
   fs.writeFileSync(path.join(outDir, 'package.json'), JSON.stringify(packageJson, null,2), 'utf8')
+  fs.writeFileSync(path.join(outDir, 'index.d.ts'), '');
 }
