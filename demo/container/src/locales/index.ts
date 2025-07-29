@@ -8,5 +8,5 @@ const languageLoaders = {
 
 export default  async ()=>{
   const language = getLanguage();
-  return await languageLoaders[language]()
+  return (await languageLoaders[language]()).default
 }
