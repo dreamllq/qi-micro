@@ -23,3 +23,5 @@ export { default as global } from './services/global';
 export { router } from './services/router';
 
 export {type MenuItem, type MenuConfig, type MenuItemConfig} from './type'
+
+export { default as mergeJson } from './utils/merge-json'

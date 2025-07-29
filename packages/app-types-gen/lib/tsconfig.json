@@ -22,7 +22,10 @@
     }
   },
   "include": [
-    "/Users/llq/Documents/origin/qi-micro/demo/app/src/locales/index.ts",
-    "/Users/llq/Documents/origin/qi-micro/demo/app/src/permission-keys/index.ts"
+    "/Users/llq/Documents/origin/qi-micro/demo/app/src/permission-keys/index.ts",
+    "/Users/llq/Documents/origin/qi-micro/demo/app/src/locales/en/index.ts",
+    "/Users/llq/Documents/origin/qi-micro/demo/app/src/locales/ja/index.ts",
+    "/Users/llq/Documents/origin/qi-micro/demo/app/src/locales/zh-cn/index.ts",
+    "/Users/llq/Documents/origin/qi-micro/demo/app/src/locales/index.ts"
   ]
 }

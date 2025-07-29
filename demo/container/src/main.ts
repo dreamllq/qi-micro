@@ -1,6 +1,6 @@
 import {default as foundationStart} from 'foundation/start';
 import { setEnv, Language } from 'llqm-framework-sdk';
-import locales from 'llqm-automation-webpack-plugin/locales';
+import locales from './locales';
 
 export default {
   start: () => {

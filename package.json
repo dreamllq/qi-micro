@@ -6,7 +6,7 @@
     "demo/*"
   ],
   "scripts": {
-    "gen-expose-types": "rm -rf ./exposes-types && lerna run gen-expose-types --scope='{app,foundation}'",
+    "gen-expose-types": "rm -rf ./exposes-types && lerna run gen-expose-types --scope='{app,foundation}' --concurrency=1",
     "build-micro": "lerna run build --scope='{container,app,foundation}'",
     "build-web": "lerna run gen-version --scope='web' && lerna run build --scope='web'",
     "build-dev": "npm run clear-build && npm run build-micro && npm run copy-all-dist",
