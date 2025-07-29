@@ -1,11 +1,14 @@
 import {default as foundationStart} from 'foundation/start';
 import { setEnv, Language } from 'llqm-framework-sdk';
-import getLocaleMessages from './locales';
 
 export default {
   start: () => {
-    setEnv({RUNTIME_ENV: window.__APS_ENV__.RUNTIME_ENV});
+    setEnv({ RUNTIME_ENV: window.__APS_ENV__.RUNTIME_ENV });
     foundationStart();
   },
-  getLocaleMessages:getLocaleMessages
+  messagesLoaders: {
+    [Language.ZH_CN]: ()=>import('./locales/zh-cn'),
+    [Language.EN]: ()=>import('./locales/en'),
+    [Language.JA]: ()=>import('./locales/ja')
+  }
 }
