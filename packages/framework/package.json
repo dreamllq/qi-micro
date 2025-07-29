@@ -59,6 +59,7 @@
     "llqm-framework-sdk": "workspace:*",
     "llqm-vue-permission": "workspace:*",
     "lodash": "^4.17.21",
+    "normalize.css": "^8.0.1",
     "moment": "^2.29.4",
     "postcss-html": "^1.5.0",
     "postcss-scss": "^4.0.6",

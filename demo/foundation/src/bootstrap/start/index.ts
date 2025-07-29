@@ -1,10 +1,8 @@
-import './html-lang'; // 初始化html国际化
-import 'normalize.css';
 import directives from './directives';
 import { permissionOptions } from './permission';
 import { start } from 'llqm-framework';
 import Layout from '@/components/layout/index.vue';
-import { i18n, global, appsData } from 'llqm-framework-sdk';
+import { i18n, appsData } from 'llqm-framework-sdk';
 
 export default () => {
   start({

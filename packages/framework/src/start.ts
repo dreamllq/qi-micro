@@ -1,3 +1,4 @@
+import 'normalize.css';
 import { init as momentInit } from './services/moment';
 import { getElementConfig } from './services/element';
 import { createApp } from 'vue';
@@ -7,10 +8,11 @@ import ElementPlus from 'element-plus';
 import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 import createRouter from './router';
 import createPermission from './permission';
-import { init as sdkInit } from 'llqm-framework-sdk';
+import { getLanguage, init as sdkInit } from 'llqm-framework-sdk';
 import { isBoolean } from 'lodash';
-
 export const start: StartFunction = async ({ base, defaultPage, layout, fullView, i18n, routes = [], permissionOptions, beforeMount, getLoginUser, beforeLayoutMount, performance, keepAlive }) => {
+  document.getElementsByTagName('html')[0].setAttribute('lang', getLanguage());
+  
   const router = createRouter({
     routes,
     base,

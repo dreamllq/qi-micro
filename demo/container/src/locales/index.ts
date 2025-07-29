@@ -1,5 +1,12 @@
-import {mergeJson} from 'llqm-framework-sdk'
-import * as foundation from 'foundation/locales';
-import * as app from 'app/locales';
+import { getLanguage, Language } from 'llqm-framework-sdk';
 
-export default mergeJson(foundation, app);
+const languageLoaders = {
+  [Language.ZH_CN]: ()=>import('./zh-cn'),
+  [Language.EN]: ()=>import('./en'),
+  [Language.JA]: ()=>import('./ja')
+};
+
+export default  async ()=>{
+  const language = getLanguage();
+  return await languageLoaders[language]()
+}

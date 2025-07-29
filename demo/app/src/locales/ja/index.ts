@@ -1,1 +1,1 @@
-export default {};
+export default { '确认': '確認' };
