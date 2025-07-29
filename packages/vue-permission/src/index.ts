@@ -1,7 +1,7 @@
 import VPermission from './components/permission.vue';
 import VPermissionProvider from './components/permission-provider.vue';
 import { usePermission, checkPermission } from '@/services/use-permission';
-import { type CreatePermission, type Permission, type CheckPermission } from './type';
+import { type CreatePermission, type Permission, type CheckPermission, type PermissionLogic } from './type';
 import { setPermissionKeys } from './services/permission-keys';
 import { setCheckPermission } from './services/check-permission';
 
@@ -19,5 +19,5 @@ export const createPermission = ({ permissionKeys, checkPermission }:CreatePermi
 export { usePermission, checkPermission };
 
 export {
-  type Permission, type CreatePermission, type CheckPermission 
+  type Permission, type CreatePermission, type CheckPermission , type PermissionLogic
 };
