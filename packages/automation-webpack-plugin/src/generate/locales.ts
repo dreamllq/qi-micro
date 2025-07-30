@@ -7,7 +7,7 @@ export default (apps:App[]=[])=>{
   const code = `
     import { mergeJson } from 'llqm-framework-sdk';
     export const load = async (language) => {
-      const locales = [];
+      const locales = [{}];
       
       ${apps.map((app, index)=>{
         return `

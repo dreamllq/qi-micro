@@ -42,8 +42,7 @@
     "url": "git+https://github.com/dreamllq/qi-micro.git"
   },
   "scripts": {
-    "build": "tsc --outDir lib src/index",
-    "test": "node tests/index.js"
+    "build": "tsc --outDir lib src/index"
   },
   "bugs": {
     "url": "https://github.com/dreamllq/qi-micro/issues"
