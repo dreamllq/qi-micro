@@ -404,6 +404,9 @@ importers:
       change-case:
         specifier: ^4.1.2
         version: 4.1.2
+      llqm-framework-sdk:
+        specifier: workspace:*
+        version: link:../framework-sdk
     devDependencies:
       '@types/node':
         specifier: ^20.5.1
