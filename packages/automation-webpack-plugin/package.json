@@ -43,7 +43,6 @@
   },
   "scripts": {
     "build": "tsc --outDir lib src/index",
-    "postversion": "git push && git push --tags && npm run build && npm publish --registry=https://repo.dev.alsi.cn/repository/aps-npm-snapshot/",
     "test": "node tests/index.js"
   },
   "bugs": {
