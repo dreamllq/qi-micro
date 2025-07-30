@@ -42,7 +42,9 @@
     "url": "git+https://github.com/dreamllq/qi-micro.git"
   },
   "scripts": {
-    "test": "node ./__tests__/automation-webpack-plugin.test.js"
+    "build": "tsc --outDir lib src/index",
+    "postversion": "git push && git push --tags && npm run build && npm publish --registry=https://repo.dev.alsi.cn/repository/aps-npm-snapshot/",
+    "test": "node tests/index.js"
   },
   "bugs": {
     "url": "https://github.com/dreamllq/qi-micro/issues"

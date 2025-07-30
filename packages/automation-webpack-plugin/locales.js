@@ -1,25 +1,26 @@
 
-    import { isArray, mergeWith, isObject } from 'lodash';
+    import { mergeJson } from 'llqm-framework-sdk';
+    export const load = async (language:any) => {
+      const locales:any[] = [];
+      
+      
+          const supportLanguages0 = (await import('foundation/support-languages')).default;
+          const messagesLoader0 = (await import('foundation/messages-loader')).default;
+          if (supportLanguages0.includes(language)) {
+            const locale0 = await messagesLoader0[language]();
+            locales.push(locale0.default);
+          }
+        
 
-    import * as foundation from 'foundation/locales';
-import * as app from 'app/locales';
+          const supportLanguages1 = (await import('app/support-languages')).default;
+          const messagesLoader1 = (await import('app/messages-loader')).default;
+          if (supportLanguages1.includes(language)) {
+            const locale1 = await messagesLoader1[language]();
+            locales.push(locale1.default);
+          }
+        
+      
 
-    const toObject = (module) => Object.keys(module).reduce((acc, key) => {
-      acc[key] = module[key];
-      return acc;
-    }, {});
-    
-    const customizer = (objValue, srcValue) => {
-      if (isArray(objValue) && isArray(srcValue)) {
-        return objValue.concat(srcValue);
-      } else if (isObject(objValue) && isObject(srcValue)) {
-        return mergeWith(toObject(objValue), toObject(srcValue), customizer);
-      }
+      return { language: mergeJson(...locales) };
     };
-
-    export default mergeWith(
-      toObject(foundation),
-toObject(app),
-      customizer
-    )
   

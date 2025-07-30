@@ -5,31 +5,24 @@ import { camelCase } from 'change-case';
 
 export default (apps:App[]=[])=>{
   const code = `
-    import { isArray, mergeWith, isObject } from 'lodash';
-
-    ${apps.map(app=>{
-      return `import * as ${camelCase(app.name)} from '${app.name}/locales';`
-    }).join('\n')}
-
-    const toObject = (module) => Object.keys(module).reduce((acc, key) => {
-      acc[key] = module[key];
-      return acc;
-    }, {});
-    
-    const customizer = (objValue, srcValue) => {
-      if (isArray(objValue) && isArray(srcValue)) {
-        return objValue.concat(srcValue);
-      } else if (isObject(objValue) && isObject(srcValue)) {
-        return mergeWith(toObject(objValue), toObject(srcValue), customizer);
-      }
-    };
-
-    export default mergeWith(
-      ${apps.map(app=>{
-        return `toObject(${camelCase(app.name)}),`
+    import { mergeJson } from 'llqm-framework-sdk';
+    export const load = async (language:any) => {
+      const locales:any[] = [];
+      
+      ${apps.map((app, index)=>{
+        return `
+          const supportLanguages${index} = (await import('${app.name}/support-languages')).default;
+          const messagesLoader${index} = (await import('${app.name}/messages-loader')).default;
+          if (supportLanguages${index}.includes(language)) {
+            const locale${index} = await messagesLoader${index}[language]();
+            locales.push(locale${index}.default);
+          }
+        `
       }).join('\n')}
-      customizer
-    )
+      
+
+      return { language: mergeJson(...locales) };
+    };
   `;
 
   const to = path.resolve(__dirname, '../../locales.js')
