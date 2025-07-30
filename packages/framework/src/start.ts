@@ -1,5 +1,4 @@
 import 'normalize.css';
-import { init as momentInit } from './services/moment';
 import { getElementConfig } from './services/element';
 import { createApp } from 'vue';
 import App from './components/app.vue';
@@ -23,7 +22,6 @@ export const start: StartFunction = async ({ base, defaultPage, layout, fullView
     getLoginUser,
     router
   });
-  await momentInit();
   const elementConfig = await getElementConfig();
   const app = createApp(App, {
     fullView,

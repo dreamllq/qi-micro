@@ -12,6 +12,7 @@
   "dependencies": {
     "llqm-framework-sdk": "workspace:*",
     "llqm-automation-webpack-plugin": "workspace:*",
+    "bcp47": "^1.1.2",
     "@stomp/stompjs": "^7.0.0",
     "@vueuse/core": "^9.13.0",
     "axios": "^0.27.2",

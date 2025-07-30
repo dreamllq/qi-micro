@@ -11,6 +11,9 @@ importers:
       lerna:
         specifier: ^8.2.3
         version: 8.2.3(encoding@0.1.13)
+      llqm-framework-sdk:
+        specifier: workspace:*
+        version: link:packages/framework-sdk
       llqm-webpack-config:
         specifier: workspace:*
         version: link:packages/webpack-config
@@ -156,6 +159,9 @@ importers:
       axios:
         specifier: ^0.27.2
         version: 0.27.2
+      bcp47:
+        specifier: ^1.1.2
+        version: 1.1.2
       change-case:
         specifier: ^4.1.2
         version: 4.1.2
@@ -3786,6 +3792,10 @@ packages:
 
   batch@0.6.1:
     resolution: {integrity: sha512-x+VAiMRL6UPkx+kudNvxTl6hB2XNNCG2r+7wixVfIYwu/2HKRXimwQyaumLjMveWvT2Hkd/cAJw+QBMfJ/EKVw==}
+
+  bcp47@1.1.2:
+    resolution: {integrity: sha512-JnkkL4GUpOvvanH9AZPX38CxhiLsXMBicBY2IAtqiVN8YulGDQybUydWA4W6yAMtw6iShtw+8HEF6cfrTHU+UQ==}
+    engines: {node: '>=0.10'}
 
   before-after-hook@2.2.3:
     resolution: {integrity: sha512-NzUnlZexiaH/46WDhANlyR2bXRopNg4F/zuSA3OpZnllCUgRaOF2znDioDWrmbNVsuZk6l9pMquQB38cfBZwkQ==}
@@ -12241,6 +12251,8 @@ snapshots:
       safe-buffer: 5.1.2
 
   batch@0.6.1: {}
+
+  bcp47@1.1.2: {}
 
   before-after-hook@2.2.3: {}
 

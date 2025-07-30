@@ -19,9 +19,8 @@ export default (apps:App[]=[])=>{
           }
         `
       }).join('\n')}
-      
 
-      return { [language]: mergeJson(...locales) };
+      return mergeJson(...locales);
     };
   `;
 
