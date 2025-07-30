@@ -8,6 +8,7 @@ const manifest = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'manifest.j
 const scannerLocale = ()=>{
   const exposes = {};
   const config = [];
+  const loaderConfig = {};
   const localDir = path.join(process.cwd(), 'src', 'locales');
   if(!fs.existsSync(localDir)) return exposes;
   const files = fs.readdirSync(localDir);
@@ -25,10 +26,12 @@ const scannerLocale = ()=>{
       if(indexFilePath){
         exposes[`./locales/${file}`] = indexFilePath;
         config.push(file)
+        loaderConfig[file] = indexFilePath;
       }
     }
   })
   saveLocaleConfig(config)
+  saveMessagesLoaders(loaderConfig)
   return exposes;
 }
 
@@ -39,6 +42,18 @@ const saveLocaleConfig = (config)=>{
 
   fs.writeFileSync(path.join(__dirname, '..', 'locales',`${pkg.name}.ts`), `
     export default ${JSON.stringify(config)}
+  `)
+}
+
+const saveMessagesLoaders = (loaderConfig)=>{
+  if(!fs.existsSync(path.join(__dirname, '..', 'messages-loaders'))){
+    fs.mkdirSync(path.join(__dirname, '..', 'messages-loaders'));
+  }
+
+  fs.writeFileSync(path.join(__dirname, '..', 'messages-loaders',`${pkg.name}.ts`), `
+    export default {
+      ${Object.keys(loaderConfig).map(l=> `'${l}': ()=>import('${loaderConfig[l]}')`)}
+    }
   `)
 }
 
@@ -56,6 +71,7 @@ module.exports = (env)=>{
       ...manifest.exposes,
       ...localExpose,
       "./support-languages": path.join(__dirname, '..', 'locales',  `${pkg.name}.ts`),
+      "./messages-loader": path.join(__dirname, '..', 'messages-loaders',  `${pkg.name}.ts`),
       "./main":path.join(__dirname, '..', 'main', pkg.name, 'index.ts'),
       "./routes": path.join(__dirname, '..', 'routes', pkg.name, 'index.ts'),
       "./public-path": path.join(__dirname, '..', 'public-path', pkg.name, 'index.ts')

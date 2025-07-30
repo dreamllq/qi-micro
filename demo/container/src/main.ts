@@ -1,4 +1,4 @@
-import {default as foundationStart} from 'foundation/start';
+import { default as foundationStart } from 'foundation/start';
 import { setEnv, Language } from 'llqm-framework-sdk';
 
 export default {

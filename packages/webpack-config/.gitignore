@@ -13,6 +13,7 @@ dist-ssr
 demo/docs/.vitepress/cache
 coverage
 locales
+messages-loaders
 
 # Editor directories and files
 .idea
