@@ -33,18 +33,6 @@ const scannerLocal = ()=>{
     }
   })
 
-  const indexTsFilePath = path.join(localDir, 'index.ts');
-  const indexJsFilePath = path.join(localDir, 'index.js');
-
-  const indexFilePath = [
-    indexTsFilePath,
-    indexJsFilePath
-  ].find(file=>fs.existsSync(file));
-
-  if(indexFilePath){
-    exposes[`./locales`] = path.relative(process.cwd(), indexFilePath);
-  }
-
   return exposes;
 }
 
