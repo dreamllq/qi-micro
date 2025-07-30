@@ -5,8 +5,9 @@ const moduleFederationCommonShared = require('../module-federation-common/shared
 const pkg = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'package.json'), 'utf8'))
 const manifest = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'manifest.json'), 'utf8'))
 
-const scannerLocal = ()=>{
+const scannerLocale = ()=>{
   const exposes = {};
+  const config = [];
   const localDir = path.join(process.cwd(), 'src', 'locales');
   if(!fs.existsSync(localDir)) return exposes;
   const files = fs.readdirSync(localDir);
@@ -23,10 +24,22 @@ const scannerLocal = ()=>{
 
       if(indexFilePath){
         exposes[`./locales/${file}`] = indexFilePath;
+        config.push(file)
       }
     }
   })
+  saveLocaleConfig(config)
   return exposes;
+}
+
+const saveLocaleConfig = (config)=>{
+  if(!fs.existsSync(path.join(__dirname, '..', 'locales'))){
+    fs.mkdirSync(path.join(__dirname, '..', 'locales'));
+  }
+
+  fs.writeFileSync(path.join(__dirname, '..', 'locales',`${pkg.name}.ts`), `
+    export default ${JSON.stringify(config)}
+  `)
 }
 
 module.exports = (env)=>{
@@ -35,14 +48,14 @@ module.exports = (env)=>{
     ...manifest.shared
   };
 
-  const localExpose = scannerLocal();
-
+  const localExpose = scannerLocale();
   const config = {
     name: pkg.name,
     filename: 'remoteEntry.js',
     exposes: {
       ...manifest.exposes,
       ...localExpose,
+      "./support-languages": path.join(__dirname, '..', 'locales',  `${pkg.name}.ts`),
       "./main":path.join(__dirname, '..', 'main', pkg.name, 'index.ts'),
       "./routes": path.join(__dirname, '..', 'routes', pkg.name, 'index.ts'),
       "./public-path": path.join(__dirname, '..', 'public-path', pkg.name, 'index.ts')
