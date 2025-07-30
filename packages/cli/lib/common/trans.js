@@ -5,7 +5,7 @@ const fs = require('fs');
 const { spawn } = require('node:child_process');
 
 module.exports = (options)=>{
-  // qm-trans -cn src/locales/zh-cn/index.ts -en src/locales/en/index.ts -ja src/locales/ja/index.ts -o src/locales
+  // qm-trans -cn src/locales/zh/index.ts -en src/locales/en/index.ts -ja src/locales/ja/index.ts -o src/locales
   spawn('qm-trans', [
     '-cn', 
     'src/locales/zh-cn/index.ts',
