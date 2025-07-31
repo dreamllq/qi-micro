@@ -17,6 +17,16 @@ const getExistLocales = (lang, dir)=>{
 }
 export const trans = async ({ from, to, dir }:{from:LangConfig, to:LangConfig[], dir:string}) => {
   console.log('trans', from, to, dir);
+
+  if (!fs.existsSync(dir)) {
+    console.log('未找到翻译目录');
+    return;
+  }
+
+  if (!fs.existsSync(path.resolve(dir, from.name, 'index.ts'))) {
+    console.log('未找到翻译源文件')
+    return;
+  }
   
   const fromLocales = require(path.resolve(dir, from.name)).default;
   await to.reduce((acc, toLang)=>{

@@ -16,7 +16,30 @@ program
 const explorerSync = cosmiconfigSync('trans', { stopDir: '/' });
 const searchedFor = explorerSync.search();
 
-trans(searchedFor.config);
+if (searchedFor) {
+  trans(searchedFor.config);
+} else {
+  console.log('在项目根目录创建配置文件 trans.config.js，内容如下：');
+  console.log(`
+module.exports = {
+  'dir': './locales',
+  'from': {
+    'name': 'zh-cn',
+    'lang': 'zh'
+  },
+  'to': [
+    {
+      'name': 'en',
+      'lang': 'en'
+    },
+    {
+      'name': 'ja',
+      'lang': 'jp'
+    }
+  ]
+};
+    `);
+}
 
 
 
