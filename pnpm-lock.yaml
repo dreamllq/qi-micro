@@ -780,6 +780,9 @@ importers:
       commander:
         specifier: ^11.0.0
         version: 11.1.0
+      cosmiconfig:
+        specifier: ^9.0.0
+        version: 9.0.0(typescript@5.2.2)
       md5:
         specifier: ^2.3.0
         version: 2.3.0

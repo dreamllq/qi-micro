@@ -1,15 +1,30 @@
 import transLocale from './trans-locale';
 import writeFileSync from './write-file'
 import flat from './flat'
+const fs = require('fs')
+const path = require('path');
 
-export const trans = async ({ fromLang, toLangs, outDir }) => {
-  const cn = flat(fromLang.locales);
-
-  await toLangs.reduce((acc, item)=>{
+type LangConfig = {
+  name: string;
+  lang: string;
+}
+const getExistLocales = (lang, dir)=>{
+  const langPath = path.resolve(dir, lang, 'index.ts');
+  if (fs.existsSync(langPath)) {
+    const locales = require(langPath).default;
+    return locales;
+  }
+}
+export const trans = async ({ from, to, dir }:{from:LangConfig, to:LangConfig[], dir:string}) => {
+  console.log('trans', from, to, dir);
+  
+  const fromLocales = require(path.resolve(dir, from.name)).default;
+  await to.reduce((acc, toLang)=>{
     return acc.then(async ()=>{
-      const message = await transLocale({locales:cn, from: fromLang.from}, item.to, item.locales);
+      const locales = getExistLocales(toLang.name, dir);
+      const message = await transLocale({locales:fromLocales, from: from.lang}, toLang.lang, locales);
       const code = `export default ${JSON.stringify(message, null, 2)}`;
-      writeFileSync(`${outDir}/${item.name}`,'index.ts', code, { flag: 'w+' });
+      writeFileSync(`${dir}/${toLang.name}`,'index.ts', code, { flag: 'w+' });
     })
   }, Promise.resolve())
 }
