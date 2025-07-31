@@ -7,17 +7,14 @@ const program = new Command();
 const path = require('path');
 const fs = require('fs');
 const { cosmiconfig, cosmiconfigSync } = require('cosmiconfig');
-const explorerSync = cosmiconfigSync('trans');
-
 
 program
   .name('aps-trans')
   .description('trans')
   .version('1.0.0');
 
+const explorerSync = cosmiconfigSync('trans', { stopDir: '/' });
 const searchedFor = explorerSync.search();
-
-console.log(JSON.stringify(searchedFor.config));
 
 trans(searchedFor.config);
 
