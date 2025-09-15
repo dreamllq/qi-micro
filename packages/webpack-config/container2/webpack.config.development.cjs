@@ -10,6 +10,21 @@ const fs = require('fs')
 const manifest = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'manifest.json'), 'utf8'))
 const pkg = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'package.json'), 'utf8'))
 
+function getLocalIP() {
+  const interfaces = os.networkInterfaces();
+  for (let devName in interfaces) {
+    const iface = interfaces[devName];
+    for (let i = 0; i < iface.length; i++) {
+      const alias = iface[i];
+      if (alias.family === 'IPv4' && !alias.internal) {
+        // 排除回环地址（如127.0.0.1）和内部地址
+        return alias.address;
+      }
+    }
+  }
+  return 'localIP'; // 未找到有效IP
+}
+
 module.exports = (env = { port: 8080 }) => {
   console.log(env);
   var myEnv = dotenv.config({ path: process.cwd() + '/.env.development' });
@@ -70,7 +85,11 @@ module.exports = (env = { port: 8080 }) => {
       historyApiFallback: true,
       bonjour: {
         type:'container',
-        name: pkg.name
+        name: pkg.name,
+        txt:{
+          hostname: os.hostname(),
+          localip: getLocalIP()
+        }
       },
       headers: {
         'Access-Control-Allow-Origin': '*',

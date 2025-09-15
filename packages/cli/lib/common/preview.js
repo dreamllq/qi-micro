@@ -5,10 +5,28 @@ const bonjour = require('bonjour');
 const getPort = require('../../utils/get-port')
 const LOG_COLOR = require('../../constants/log-color')
 
+function getLocalIP() {
+  const interfaces = os.networkInterfaces();
+  for (let devName in interfaces) {
+    const iface = interfaces[devName];
+    for (let i = 0; i < iface.length; i++) {
+      const alias = iface[i];
+      if (alias.family === 'IPv4' && !alias.internal) {
+        // 排除回环地址（如127.0.0.1）和内部地址
+        return alias.address;
+      }
+    }
+  }
+  return 'localIP'; // 未找到有效IP
+}
+
 module.exports = async (options)=>{
   const bonjourClient = bonjour();
   const port = await getPort(options)
-  const service = bonjourClient.publish({ name: options.name, type: options.type, port: port })
+  const service = bonjourClient.publish({ name: options.name, type: options.type, port: port, txt: {
+    hostname: os.hostname(),
+    localip: getLocalIP()
+  }  })
   // http-server dist -p 8101 -g -c-1
   const proc = spawn('http-server', ['dist', '-p', String(port), '-g', '-c-1', '-s'], {
     cwd: process.cwd(),

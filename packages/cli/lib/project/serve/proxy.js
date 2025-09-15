@@ -75,9 +75,27 @@ const hasReferer= (referer)=>{
   return addresses.some(item=>item.address === referer.address && item.family === referer.family)
 }
 
+function getLocalIP() {
+  const interfaces = os.networkInterfaces();
+  for (let devName in interfaces) {
+    const iface = interfaces[devName];
+    for (let i = 0; i < iface.length; i++) {
+      const alias = iface[i];
+      if (alias.family === 'IPv4' && !alias.internal) {
+        // 排除回环地址（如127.0.0.1）和内部地址
+        return alias.address;
+      }
+    }
+  }
+  return ''; // 未找到有效IP
+}
+
 // app服务监听
 const appBrowser = bonjourClient.find({type: 'app'})
 appBrowser.on('up',  function(service){
+  if(!service) return;
+  if(!service.txt) return;
+  if(service.txt.localip !== getLocalIP()) return;
   if(!hasReferer(service.referer)) return;
   if(!serviceStatus.apps[service.name]) return;
   console.log(BASE_COLOR_MAP.LOG_MSEEAGE_COLOR, 'up',service.type,service.name, `http://127.0.0.1:${service.port}`, CLEAR_STYLE_CODE)
@@ -92,6 +110,9 @@ appBrowser.on('up',  function(service){
   logProxyServerStatus(serviceStatus, proxyInfo)
 });
 appBrowser.on('down',  function(service){
+  if(!service) return;
+  if(!service.txt) return;
+  if(service.txt.localip !== getLocalIP()) return;
   if(!serviceStatus.apps[service.name]) return;
   if(serviceStatus.apps[service.name].fqdn !== service.fqdn) return;
 
@@ -109,6 +130,9 @@ let containerHost;
 // container服务监听
 const containerBrowser = bonjourClient.find({type: 'container'})
 containerBrowser.on('up',  function(service){
+  if(!service) return;
+  if(!service.txt) return;
+  if(service.txt.localip !== getLocalIP()) return;
   if(!hasReferer(service.referer)) return;
   if(serviceStatus.container.name !== service.name) return;
   console.log(BASE_COLOR_MAP.LOG_MSEEAGE_COLOR,'up',service.type,service.name, `http://127.0.0.1:${service.port}`, CLEAR_STYLE_CODE)
@@ -123,6 +147,9 @@ containerBrowser.on('up',  function(service){
   logProxyServerStatus(serviceStatus, proxyInfo)
 });
 containerBrowser.on('down',  function(service){
+  if(!service) return;
+  if(!service.txt) return;
+  if(service.txt.localip !== getLocalIP()) return;
   if(serviceStatus.container.name !== service.name) return;
   if(serviceStatus.container.fqdn !== service.fqdn) return;
   console.log(BASE_COLOR_MAP.ERROR_MSEEAGE_COLOR,'down',service.type,service.name, `http://127.0.0.1:${service.port}`, CLEAR_STYLE_CODE)

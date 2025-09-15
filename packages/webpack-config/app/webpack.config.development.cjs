@@ -9,6 +9,21 @@ const manifest = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'manifest.j
 const pkg = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'package.json'), 'utf8'))
 const os = require('os')
 
+function getLocalIP() {
+  const interfaces = os.networkInterfaces();
+  for (let devName in interfaces) {
+    const iface = interfaces[devName];
+    for (let i = 0; i < iface.length; i++) {
+      const alias = iface[i];
+      if (alias.family === 'IPv4' && !alias.internal) {
+        // 排除回环地址（如127.0.0.1）和内部地址
+        return alias.address;
+      }
+    }
+  }
+  return 'localIP'; // 未找到有效IP
+}
+
 module.exports = (env = { port: 7777 }) => {
   console.log(env);
   const { port } = env;
@@ -72,7 +87,8 @@ module.exports = (env = { port: 7777 }) => {
         type:'app',
         name: pkg.name,
         txt:{
-          hostname:os.hostname()
+          hostname:os.hostname(),
+          localip: getLocalIP()
         }
       },
       headers: {
